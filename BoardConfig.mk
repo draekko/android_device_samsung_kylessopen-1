@@ -163,24 +163,27 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Recovery
 TARGET_RECOVERY_INITRC := device/samsung/kylessopen/recovery/init.recovery.rc
-TARGET_RECOVERY_FSTAB := device/samsung/kylessopen/ramdisk/fstab.qcom
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/kylessopen/recovery/recovery_keys.c
+TARGET_RECOVERY_FSTAB := device/samsung/kylessopen/recovery/recovery.fstab
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun%d/file"
+TARGET_RECOVERY_LCD_BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 RECOVERY_SDCARD_ON_DATA := true
+SKIP_SET_METADATA := true
+DEVICE_RESOLUTION := 480x800
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/kylessopen/recovery/recovery_keys.c
+BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun%d/file"
 BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
-DEVICE_RESOLUTION := 480x800
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TW_INCLUDE_FB2PNG := true
 TW_NO_REBOOT_BOOTLOADER := true
+TW_DONT_UNMOUNT_SYSTEM := true
 TW_HAS_DOWNLOAD_MODE := true
-SKIP_SET_METADATA := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TARGET_RECOVERY_LCD_BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_BOARD_USES_MTP := true
+
